@@ -1,0 +1,143 @@
+
+ /* first draft  */
+
+.body {
+  margin: 0; /*Remove default body margin */
+  font-family: 'Gotham A', 'Gotham B', sans-serif; /* Set default font family */
+  color:#263037; /* Set default text color */
+  line-height: 1.6; /* Set default line height */
+  background-color: #F2F4F3; /* Set default background color */
+  font-size: 18px; /* Set default font size */
+}
+
+a {
+  color: #ffffff; /* Set link color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+
+.container {
+  margin: 0 auto; 
+  padding: 2rem; 
+}
+
+/* Header styles */
+header {
+  background-color:   #6495ed; 
+  color: #F2F4F3; /* text */
+  padding: 2rem 0; 
+  text-align: center; /* Center header text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow  */
+}
+
+.header h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 36px; 
+  color:black;
+}
+
+.navbar {
+  display: flex; /* Use flexbox for navbar */
+  /* justify-content: space-between; Space out navbar items */
+  background-color: #263037; 
+  align-items: center; 
+  padding: 1rem 2rem;
+}
+
+.logo-container {
+  display: flex; /* Use flexbox to align logos */
+  align-items: center; /* Center logo vertically */
+}
+.logo {
+  height: 5vh; 
+  width: 5vw; 
+  margin-right: 1rem; /* Add space between logos */
+}
+
+.nav-links {
+  list-style: none; /* Remove bullets from nav list */
+  display: flex; /* Display links in a row */
+}
+
+.nav-links li {
+  margin-right: 2rem; 
+  color: black;/* Space between each link */
+}
+
+.nav-links a:hover {
+  color: #6495ed; 
+}
+
+/* Hero section */
+.hero {
+  background-color: #E7ECEC; 
+  padding: 4rem 0; /* vertical padding  */
+  text-align: center; 
+  color: #263037; 
+}
+
+.hero h1 {
+  font-size: 3rem; 
+  margin-bottom: 0.5rem; /* space below heading */
+}
+
+.hero p {
+  font-size: 1.5rem; 
+  margin-bottom: 300; 
+}
+
+/* Section Styles */
+.about {
+  margin: 4rem 0; 
+  padding: 2rem; 
+  background-color: #E7ECEC; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0,0.1); 
+}
+
+.about p {
+  font-size: 1.1rem; 
+  line-height: 1.8; 
+}
+
+/* Project Section */
+.projects .project-grid {
+  display: grid; /* Use CSS Grid for project layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid columns */
+  gap: 2rem; 
+}
+
+.project-card {
+  background-color: #E7ECEC; /* Set project card background color */
+  padding: 1.5rem; /* Add padding inside project cards */
+  border-radius: 8px; /* Add rounded corners to project cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0.1); /* Add subtle shadow to project cards */
+}
+
+.project-card h3 {
+  margin-top: 0; /* Remove default top margin */
+  font-size: 1.5rem; /* Set project title font size */
+}
+
+/* Contact Section */
+.contact a {
+  color : #263037; /* Set contact link color */
+  font-weight: bold; /* Make contact links bold */
+}
+
+ /* Footer Styles */
+.footer {
+  text-align: center; /* Center footer text */
+  padding: 1rem 0; /* Add vertical padding to footer */
+  background-color: #6495ed; /* Set footer background color */
+  color: #F2F4F3; /* Set footer text color */
+  margin-top: 4rem; /* Add space above footer */
+}
+
+.footer p {
+  margin: 0; /* Remove default margin */
+} 
+

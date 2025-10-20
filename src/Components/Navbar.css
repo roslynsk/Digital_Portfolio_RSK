@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #F5F5F5;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #7ba6c8;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #263037;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #7ba6c8;
+}
