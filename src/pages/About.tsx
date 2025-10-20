@@ -1,12 +1,11 @@
 import React from "react";
 import "./About.css";
 import profileImg from "../assets/profileimg.png";
-import delftImg from "../assets/delft.png";
 import researchImg from "../assets/research.png";
 import explorationImg from "../assets/exploration.png";
 import concept1Img from "../assets/concept1.png";
 import concept2Img from "../assets/concept2.png";
-import gradpic from "../assets/gradpic.png"
+
 
 const About: React.FC = () => {
   return (
