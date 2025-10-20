@@ -2,10 +2,10 @@ import React from "react";
 import "./Gallery.css";
 
 // ✅ Import your images
-import filler1img from "../assets/filler1.jpg";
-import filler2img from "../assets/filler3.jpg";
-import filler3img from "../assets/filler4.jpg";
-import filler4img from "../assets/filler5.jpg";
+import filler1img from "../assets/filler_1.jpg";
+import filler2img from "../assets/filler_3.jpg";
+import filler3img from "../assets/filler_4.jpg";
+import filler4img from "../assets/filler_5.jpg";
 
 const Gallery: React.FC = () => {
   const projects = [
