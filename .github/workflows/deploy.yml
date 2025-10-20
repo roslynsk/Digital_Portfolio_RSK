@@ -1,31 +1,37 @@
 name: Deploy React App to GitHub Pages
 
+# Trigger the workflow on pushes to the main branch
 on:
   push:
     branches:
-      - main   # change if your default branch is 'master'
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout your repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # match your Node version
+          node-version: '20'  # Adjust if your project uses a different Node version
 
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Step 4: Build the React app
       - name: Build project
         run: npm run build
 
+      # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
