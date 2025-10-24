@@ -1,131 +1,124 @@
 .portfolio {
   background-color: #f5f5f5;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
   color: #263037;
   font-family: 'Gotham A', 'Gotham B', sans-serif;
+  text-align: center;
 }
 
 .portfolio-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-weight: bold;
   color: #263037;
+  margin-bottom: 3rem;
 }
 
-/*  layout for all */
-.project {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 3rem auto;
+/* Grid Layout */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 3rem;
+  justify-items: center;
   width: 85%;
-  border-radius: 12px;
+  margin: 0 auto;
+}
+
+/* Individual Cards */
+.portfolio-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* reversing sides for each project */
-.project.reverse {
-  flex-direction: row-reverse;
+.portfolio-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-.project-text {
-  flex: 1;
-  padding: 3rem;
+/* Image styling */
+.portfolio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.4s ease;
 }
 
-.project-text h2 {
-  font-size: 2rem;
+.portfolio-card:hover .portfolio-image {
+  filter: brightness(35%);
+}
+
+/* Overlay (hidden until hover) */
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  color: #f5f5f5;
+  transition: opacity 0.4s ease;
+  padding: 1.5rem;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* Text inside overlay */
+.portfolio-overlay h2 {
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
-.project-text h3 {
-  font-size: 1.2rem;
+.portfolio-overlay h3 {
+  font-size: 1.1rem;
+  font-weight: normal;
   margin-bottom: 1rem;
 }
 
-.project-text p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+.portfolio-overlay p {
+  font-size: 1rem;
+  line-height: 1.4;
+  max-width: 80%;
+  margin-bottom: 1rem;
 }
 
+/* Button */
 .project-btn {
   background-color: #263037;
-  color: white;
+  color: #fff;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
+  border-radius: 20px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-
-.project-image {
-  flex: 1;
+.project-btn:hover {
+  background-color: #7ba6c8;
 }
 
-.project-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-/*Individual project colors and text */
-.project1 {
-  background-color: #C8C8C3; 
-  color: white;
-}
-
-.project1 .project-btn {
-  background-color: #f5f5f5;
-  color: #333;
-}
-.project1 .project-btn:hover {
-  background-color: #9ac39c; 
-}
-
-
-.project2 {
-  background-color: #E5E5EB; 
-  color: #333;
-}
-
-.project2 .project-btn {
-  background-color: #f5f5f5;
-  color: #333
-}
-
-.project2 .project-btn:hover {
-  background-color: #ff0000; 
-}
-
-.project3 {
-  background-color: white
-  color:#333 
-}
-
-.project3 .project-btn {
-  background-color: white;
-  color: #333
-}
-
-.project3 .project-btn:hover {
-  background-color: #33ffff; 
-}
-
-
-/* layout for smaller screens */
+/* Responsive */
 @media (max-width: 768px) {
-  .project,
-  .project.reverse {
-    flex-direction: column;
+  .portfolio-grid {
+    grid-template-columns: 1fr;
   }
 
-  .project-text {
-    text-align: center;
-    padding: 2rem;
+  .portfolio-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .portfolio-overlay p {
+    font-size: 0.9rem;
   }
 }
