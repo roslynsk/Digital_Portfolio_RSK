@@ -1,0 +1,94 @@
+.photo-detail {
+  background-color: #f5f5f5;
+  color: #263037;
+  font-family: 'Gotham A', 'Gotham B', sans-serif;
+  padding: 4rem 5%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: block;
+  margin-bottom: 2rem;
+  color: #263037;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  color: #7ba6c8;
+}
+
+/* Header spanning full width */
+.photo-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.photo-date {
+  font-size: 0.9rem;
+  color: #7ba6c8;
+  font-weight: bold;
+  margin-bottom: 0.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.photo-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Two-column layout for desktop */
+.photo-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.photo-description {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.photo-description p {
+  margin-bottom: 1.5rem;
+}
+
+.photo-image-container {
+  flex: 1;
+}
+
+.photo-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  display: block;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 1024px) {
+  .photo-content {
+    flex-direction: column;
+  }
+
+  .photo-image {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .photo-title {
+    font-size: 2rem;
+  }
+
+  .photo-description {
+    font-size: 1rem;
+  }
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import "./Home.css";
 import Contact from "./Contact";
+import { useNavigate } from "react-router-dom";
+
 
 import sentioimg from "../assets/sentio.png";
 import haptiximg from "../assets/Haptix.png";
@@ -35,6 +37,8 @@ const featuredProjects = [
 ];
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="home">
       {/* Hero */}
@@ -51,7 +55,10 @@ const Home: React.FC = () => {
             A product / UX Designer who strives to create intuitive, elegant
             designs that solve real problems.
           </p>
-          <button className="portfolio-btn">Portfolio</button>
+          <button className="portfolio-btn" onClick={() => navigate("/portfolio")}>
+            Portfolio
+          </button>
+
         </div>
       </section>
 

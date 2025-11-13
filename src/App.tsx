@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
@@ -7,6 +6,7 @@ import Footer from "./Components/Footer";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Gallery from "./pages/Gallery";
+import PhotoDetail from "./pages/PhotoDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -21,6 +21,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/gallery" element={<Gallery />} />
+            {/* New route for individual photo/blog entry */}
+            <Route path="/gallery/:id" element={<PhotoDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
@@ -32,4 +34,4 @@ function App() {
   );
 }
 
-export default App;   
+export default App;
