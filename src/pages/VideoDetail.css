@@ -1,0 +1,102 @@
+.video-detail {
+  width: 100%;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  color: #263037;
+}
+
+.video-detail-header {
+  margin-bottom: 2rem;
+}
+
+.video-detail-header h1 {
+  font-size: 2.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Back link style (optional) */
+.back-link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  color: #263037;
+}
+.back-link:hover {
+  opacity: 1;
+}
+
+/* 🔥 Video container — 80% screen width */
+.video-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 45%; /* maintains 16:9 ratio at 80% width */
+  height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.gallery-video-full {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Space for your write-up */
+.video-detail-content {
+  width: 80%;
+  margin: 3rem auto 0;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.video-detail-content h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+/* 📱 Mobile optimization */
+@media (max-width: 768px) {
+  .video-container,
+  .video-detail-content {
+    width: 100%;
+  }
+
+  .video-detail-header h1 {
+    text-align: center;
+  }
+}
+
+/* Storyboard Section */
+.video-storyboard-section {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  width: 80%;
+  margin: 4rem auto;
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+.storyboard-card {
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.storyboard-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #263037;
+}
+
+.storyboard-card img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+

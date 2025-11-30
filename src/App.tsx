@@ -9,6 +9,8 @@ import Gallery from "./pages/Gallery";
 import PhotoDetail from "./pages/PhotoDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import VideoDetail from "./pages/VideoDetail";
+
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
             {/* New route for individual photo/blog entry */}
             <Route path="/gallery/:id" element={<PhotoDetail />} />
             <Route path="/about" element={<About />} />
+            <Route path="/videos/:id" element={<VideoDetail />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

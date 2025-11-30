@@ -1,10 +1,11 @@
+// Gallery.tsx
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Gallery.css";
 
 import filler1img from "../assets/aesthetic.jpg";
 import filler2img from "../assets/dog.jpeg";
-import filler3img from "../assets/probw.jpg"
+import filler3img from "../assets/probw.jpg";
 
 const photographyProjects = [
   { id: 1, title: "Ethereal Essence", description: "Aesthetic", image: filler1img },
@@ -12,12 +13,13 @@ const photographyProjects = [
   { id: 3, title: "Professional", description: "Portrait", image: filler3img },
 ];
 
-const videoProjects = [
+export const videoProjects = [
   {
     id: 1,
-    title: "Video 1",
-    description: "Description",
-    youtube: "https://www.youtube.com/embed/4mCMQyVjxZ4?sirbI2L1yWXpvzBlOd",
+    title: "Headphones Ad ",
+    description: "Assignment 4",
+    youtube: "https://www.youtube.com/embed/fn9DfOfEUCQ?si=Xc7zpEQ96GqIn2uh",
+    thumbnail: "https://img.youtube.com/vi/fn9DfOfEUCQ/hqdefault.jpg",
   },
 ];
 
@@ -28,9 +30,17 @@ const Gallery: React.FC = () => {
         <h2>PHOTOGRAPHY</h2>
         <div className="gallery-grid">
           {photographyProjects.map((item) => (
-            <Link to={`/gallery/${item.id}`} key={item.id} className="gallery-card-link">
+            <Link
+              to={`/gallery/${item.id}`}
+              key={item.id}
+              className="gallery-card-link"
+            >
               <div className="gallery-card">
-                <img src={item.image} alt={item.title} className="gallery-image" />
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="gallery-image"
+                />
                 <div className="gallery-overlay">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
@@ -45,22 +55,23 @@ const Gallery: React.FC = () => {
         <h2>VIDEO PRODUCTION</h2>
         <div className="gallery-grid">
           {videoProjects.map((item) => (
-            <div key={item.id} className="gallery-card">
-              <iframe
-                width="100%"
-                height="100%"
-                src={item.youtube}
-                title={item.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="gallery-video"
-              ></iframe>
-              <div className="gallery-overlay">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+            <Link
+              to={`/videos/${item.id}`}
+              key={item.id}
+              className="gallery-card-link"
+            >
+              <div className="gallery-card">
+                <img
+                  src={item.thumbnail}
+                  alt={item.title}
+                  className="gallery-image"
+                />
+                <div className="gallery-overlay">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
