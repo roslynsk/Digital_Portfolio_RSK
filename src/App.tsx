@@ -10,7 +10,7 @@ import PhotoDetail from "./pages/PhotoDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import VideoDetail from "./pages/VideoDetail";
-
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
@@ -23,11 +23,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/gallery" element={<Gallery />} />
-            {/* New route for individual photo/blog entry */}
             <Route path="/gallery/:id" element={<PhotoDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/videos/:id" element={<VideoDetail />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio/:id" element={<ProjectDetail />} />
           </Routes>
         </main>
 

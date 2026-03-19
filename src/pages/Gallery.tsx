@@ -21,6 +21,15 @@ export const videoProjects = [
     youtube: "https://www.youtube.com/embed/fn9DfOfEUCQ?si=Xc7zpEQ96GqIn2uh",
     thumbnail: "https://img.youtube.com/vi/fn9DfOfEUCQ/hqdefault.jpg",
   },
+
+    {
+    id: 2,
+    title: "Algorithmic Music Performance",
+    description: "Assignment 5",
+    youtube: "https://www.youtube.com/embed/UWllJ8RGFVk",
+    thumbnail: "https://img.youtube.com/vi/UWllJ8RGFVk/hqdefault.jpg",
+  
+  },
 ];
 
 const Gallery: React.FC = () => {

@@ -1,9 +1,11 @@
 import React from "react";
 import "./Portfolio.css";
+import { useNavigate } from "react-router-dom";
 
 import project1Img from "../assets/sentio.png";
 import project2Img from "../assets/airbuds.png";
 import project3Img from "../assets/Haptix.png";
+import culturalProbeImg from "../assets/gardening_pic.png";
 
 const projects = [
   {
@@ -23,19 +25,27 @@ const projects = [
   {
     title: "HaptiX",
     description:
-      "A haptic feedback suite designed for immersive experiences with Logitech’s design team.",
+      "A haptic feedback suite designed for immersive experiences with Logitech's design team.",
     image: project3Img,
+    button: "View Project",
+  },
+  {
+    title: "Gardening Probe",
+    description: "Designing a cultural probe to dig deeper into the lives of middle-aged gardeners.",
+    image: culturalProbeImg,
     button: "View Project",
   },
 ];
 
 const Portfolio: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="portfolio">
       <h1 className="portfolio-title">PORTFOLIO</h1>
       <div className="portfolio-grid">
         {projects.map((project, index) => (
-          <div key={index} className="portfolio-card">
+          <div key={index} className="portfolio-card" onClick={() => navigate(`/portfolio/${index + 1}`)}>
             <img
               src={project.image}
               alt={project.title}

@@ -8,11 +8,13 @@
 
 .video-detail-header {
   margin-bottom: 2rem;
+  color: whitesmoke;
 }
 
 .video-detail-header h1 {
   font-size: 2.2rem;
   margin-top: 0.5rem;
+  color: whitesmoke;
 }
 
 /* Back link style (optional) */
@@ -20,7 +22,7 @@
   text-decoration: none;
   font-size: 0.9rem;
   opacity: 0.7;
-  color: #263037;
+  color: whitesmoke;
 }
 .back-link:hover {
   opacity: 1;
@@ -52,11 +54,13 @@
   margin: 3rem auto 0;
   text-align: left;
   line-height: 1.6;
+  color: whitesmoke;
 }
 
 .video-detail-content h2 {
   font-size: 1.6rem;
   margin-bottom: 0.75rem;
+  color: whitesmoke;
 }
 
 /* 📱 Mobile optimization */
@@ -90,7 +94,7 @@
 .storyboard-card h3 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #263037;
+  color:whitesmoke;
 }
 
 .storyboard-card img {
