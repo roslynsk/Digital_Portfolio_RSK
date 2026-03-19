@@ -4,7 +4,6 @@ import "./ProjectDetail.css";
 
 import project1Img from "../assets/sentiocopy.png";
 import project2Img from "../assets/airbuds.png";
-import project3Img from "../assets/Haptix.png";
 import culturalProbeImg from "../assets/gardening_pic.png";
 
 import research1Img from "../assets/research_1.png";
@@ -21,6 +20,12 @@ import concept4Img from "../assets/concept_4.png";
 import app1Img from "../assets/app_1.png";
 import earbuds2Img from "../assets/earbuds2.png"
 import earbuds3Img from "../assets/earbuds3.png"
+import haptixResearchImg from "../assets/userneedshaptix.png";
+import haptixIdeationImg from "../assets/groupideation.png";
+import haptixScamperImg from "../assets/scamper.png";
+import haptixHeadwearImg from "../assets/headwear1.png";
+import haptixFrontImg from "../assets/fronthaptix.png";
+import haptixMarketingImg from "../assets/marketingboardhaptix.png";
 
 const projectData = [
   {
@@ -73,10 +78,31 @@ const projectData = [
   {
     id: 3,
     title: "HaptiX",
-    subtitle: "Haptic feedback suite collab with Logitech",
-    intro: "A haptic feedback suite designed for immersive experiences with Logitech's design team.",
-    images: [project3Img],
-    sections: [],
+    subtitle: "A haptic feedback suite for immersive simulation gaming",
+    coDesigners: "Padraig Mannix, Moya Sheehan and Emily McCormack",
+    intro: "HaptiX was developed as part of Real World Studio, a module in which student teams collaborate with industry clients to solve real design challenges. Our group worked with Logitech to explore how simulation couch gaming could be made more immersive and accessible.",
+    images: [
+      haptixResearchImg,
+      haptixIdeationImg,
+      haptixScamperImg,
+      haptixHeadwearImg,
+      haptixFrontImg,
+      haptixMarketingImg,
+    ],
+    sections: [
+      {
+        heading: "Research",
+        text: "We began with field research to understand what was missing from the simulation gaming experience. Our team interviewed non-gamers, casual gamers and serious gamers to identify unmet needs in the market. We also carried out market research to explore what products currently existed and identify gaps. As part of our research we travelled to Logitech's headquarters in Cork to meet the team, present our work and use their simulation rig setups first-hand. To further understand the sensations we wanted to replicate, we went go-karting as a group to get a real sense of speed, vibration and motion in action.",
+      },
+      {
+        heading: "Ideation",
+        text: "Using the SCAMPER method and group brainstorming sessions, we explored a wide range of concepts around motion, sensation and immersion. We took a blue-sky approach, sketching products, mechanisms and body movements to push our thinking beyond conventional gaming peripherals. I was in charge of designing the headwear and created sketches as well as clay models. We presented our progress to Logitech weekly, incorporating their feedback into each iteration.",
+      },
+      {
+        heading: "Final Concept",
+        text: "HaptiX is a haptic feedback wearable suite consisting of a vest, AR glasses, wrist bands and ankle bands. The AR glasses project contextual additions to the game environment, such as accelerometers or competing vehicles in racing games. All wearables vibrate and respond in real time to in-game events, giving the user a full-body sensory experience that bridges the gap between simulation and reality.",
+      },
+    ],
   },
   {
     id: 4,
@@ -117,9 +143,12 @@ const ProjectDetail: React.FC = () => {
 
         {/* RIGHT — sticky text */}
         <div className="project-detail-text">
-          <h1>{project.title}</h1>
-          <h2>{project.subtitle}</h2>
-          <p className="project-intro">{project.intro}</p>
+  <h1>{project.title}</h1>
+  <h2>{project.subtitle}</h2>
+  {project.coDesigners && (
+    <p className="project-codesigners">Co-designers: {project.coDesigners}</p>
+  )}
+  <p className="project-intro">{project.intro}</p>
 
           {project.sections.map((section, index) => (
             <div key={index} className="project-section">

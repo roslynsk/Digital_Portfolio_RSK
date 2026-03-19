@@ -99,3 +99,11 @@
     max-height: none;
   }
 }
+
+.project-codesigners {
+  font-size: 0.9rem;
+  color: #263037;
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}

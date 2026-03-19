@@ -3,7 +3,6 @@ import "./Home.css";
 import Contact from "./Contact";
 import { useNavigate } from "react-router-dom";
 
-
 import sentioimg from "../assets/sentio.png";
 import haptiximg from "../assets/Haptix.png";
 import airbudimg from "../assets/airbuds.png";
@@ -14,25 +13,27 @@ import figmaimg from "../assets/figma.png";
 import blenderimg from "../assets/blender.png";
 import mayaimg from "../assets/maya.png";
 
-// Array of featured projects
 const featuredProjects = [
   {
     title: "Sentio",
     description: "Detecting organ rejection in transplant patients",
     image: sentioimg,
     button: "See Project",
+    id: 1,
   },
   {
     title: "HaptiX",
     description: "Haptic feedback suite collab with Logitech",
     image: haptiximg,
     button: "See Project",
+    id: 3,
   },
   {
     title: "Airbuds",
     description: "Redesigned case for ease of use when travelling",
     image: airbudimg,
     button: "See Project",
+    id: 2,
   },
 ];
 
@@ -58,7 +59,6 @@ const Home: React.FC = () => {
           <button className="portfolio-btn" onClick={() => navigate("/portfolio")}>
             Portfolio
           </button>
-
         </div>
       </section>
 
@@ -71,7 +71,7 @@ const Home: React.FC = () => {
             <div key={index} className="project-card">
               <div className="project-image-container">
                 <img src={project.image} alt={project.title} />
-                <div className="overlay">
+                <div className="overlay" onClick={() => navigate(`/portfolio/${project.id}`)}>
                   <span>{project.button}</span>
                 </div>
               </div>

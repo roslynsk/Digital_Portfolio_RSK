@@ -1,18 +1,23 @@
 /* Full-width wrapper for background */
 .contact-wrapper {
-  background-color: #f5f5f5; /* full-section background */
+  background-color: #f5f5f5;
   width: 100%;
-  padding: 4rem 2rem; /* vertical spacing */
-  position: relative; /* positioning context */
-  overflow: visible; /* ADD THIS - allows circle to be visible outside wrapper */
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: visible;
 }
 
 /* Inner centered container */
 .contact {
   max-width: 600px;
-  margin: 0 auto; /* centers horizontally */
+  margin: 0 auto;
   text-align: center;
   font-size: 1.5rem;
+  color: #263037;
+}
+
+.contact h2 {
+  color: #263037;
 }
 
 /* Contact form layout */
@@ -30,6 +35,7 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  color: #263037;
 }
 
 /* Button styling */
@@ -43,11 +49,11 @@
   font-size: 1rem;
 }
 
-/* spinning circle at the right side of the page */
+/* Spinning circle at the right side of the page */
 .circle-bottom-right {
   position: absolute;
   top: 60%;
-  right: 10%; /* START WITH THIS - visible on page */
+  right: 10%;
   transform: translateY(-50%);
-  pointer-events: none; /* prevents interfering with form inputs */
+  pointer-events: none;
 }
