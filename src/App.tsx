@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import VideoDetail from "./pages/VideoDetail";
 import ProjectDetail from "./pages/ProjectDetail";
+import BlogDetail from "./pages/BlogDetail";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/videos/:id" element={<VideoDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio/:id" element={<ProjectDetail />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
           </Routes>
         </main>
 

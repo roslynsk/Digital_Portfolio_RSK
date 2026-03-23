@@ -6,6 +6,7 @@ import "./Gallery.css";
 import filler1img from "../assets/aesthetic.jpg";
 import filler2img from "../assets/dog.jpeg";
 import filler3img from "../assets/probw.jpg";
+import overflowThumb from "../assets/drawing3.png";
 
 const photographyProjects = [
   { id: 1, title: "Ethereal Essence", description: "Aesthetic", image: filler1img },
@@ -16,21 +17,38 @@ const photographyProjects = [
 export const videoProjects = [
   {
     id: 1,
-    title: "Headphones Ad ",
+    title: "Headphones Ad",
     description: "Assignment 4",
     youtube: "https://www.youtube.com/embed/fn9DfOfEUCQ?si=Xc7zpEQ96GqIn2uh",
     thumbnail: "https://img.youtube.com/vi/fn9DfOfEUCQ/hqdefault.jpg",
   },
-
-    {
-    id: 2,
-    title: "Algorithmic Music Performance",
-    description: "Assignment 5",
-    youtube: "https://www.youtube.com/embed/UWllJ8RGFVk",
-    thumbnail: "https://img.youtube.com/vi/UWllJ8RGFVk/hqdefault.jpg",
   
+];
+
+export const blogProjects = [
+  {
+    id: 1,
+    title: "Overflow, an Interactive Art Installation",
+    description: "Assignment 2",
+    image: overflowThumb,
+    link: "/blog/1",
+  },
+  {
+    id: 2,
+    title: "Reflection Vlog",
+    description: "Assignment 3",
+    image: "https://img.youtube.com/vi/P0S7NJK_D3E/hqdefault.jpg",
+    link: "https://youtu.be/P0S7NJK_D3E",
+  },
+  {
+    id: 3,
+    title: "Algorithmic Music Performance",
+    description: "Assignment 1",
+    image: "https://img.youtube.com/vi/UWllJ8RGFVk/hqdefault.jpg",
+    link: "https://youtu.be/UWllJ8RGFVk",
   },
 ];
+
 
 const Gallery: React.FC = () => {
   return (
@@ -39,17 +57,9 @@ const Gallery: React.FC = () => {
         <h2>PHOTOGRAPHY</h2>
         <div className="gallery-grid">
           {photographyProjects.map((item) => (
-            <Link
-              to={`/gallery/${item.id}`}
-              key={item.id}
-              className="gallery-card-link"
-            >
+            <Link to={`/gallery/${item.id}`} key={item.id} className="gallery-card-link">
               <div className="gallery-card">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="gallery-image"
-                />
+                <img src={item.image} alt={item.title} className="gallery-image" />
                 <div className="gallery-overlay">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
@@ -64,17 +74,9 @@ const Gallery: React.FC = () => {
         <h2>VIDEO PRODUCTION</h2>
         <div className="gallery-grid">
           {videoProjects.map((item) => (
-            <Link
-              to={`/videos/${item.id}`}
-              key={item.id}
-              className="gallery-card-link"
-            >
+            <Link to={`/videos/${item.id}`} key={item.id} className="gallery-card-link">
               <div className="gallery-card">
-                <img
-                  src={item.thumbnail}
-                  alt={item.title}
-                  className="gallery-image"
-                />
+                <img src={item.thumbnail} alt={item.title} className="gallery-image" />
                 <div className="gallery-overlay">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
@@ -84,6 +86,35 @@ const Gallery: React.FC = () => {
           ))}
         </div>
       </section>
+
+      <section className="gallery-section">
+  <h2>INTERACTIVE MEDIA</h2>
+  <div className="gallery-grid">
+    {blogProjects.map((item) => (
+      item.link.startsWith("http") ? (
+        <a href={item.link} target="_blank" rel="noopener noreferrer" key={item.id} className="gallery-card-link">
+          <div className="gallery-card">
+            <img src={item.image} alt={item.title} className="gallery-image" />
+            <div className="gallery-overlay">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </div>
+        </a>
+      ) : (
+        <Link to={item.link} key={item.id} className="gallery-card-link">
+          <div className="gallery-card">
+            <img src={item.image} alt={item.title} className="gallery-image" />
+            <div className="gallery-overlay">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </div>
+        </Link>
+      )
+    ))}
+  </div>
+</section>
     </div>
   );
 };
