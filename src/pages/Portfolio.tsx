@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import project1Img from "../assets/sentio.png";
 import project2Img from "../assets/airbuds.png";
 import project3Img from "../assets/Haptix.png";
-import culturalProbeImg from "../assets/gardening_pic.png";
+import cniotalImg from "../assets/Cniotail.jpg"
 
 const projects = [
   {
@@ -29,10 +29,11 @@ const projects = [
     image: project3Img,
     button: "View Project",
   },
-  {
-    title: "Gardening Probe",
-    description: "Designing a cultural probe to dig deeper into the lives of middle-aged gardeners.",
-    image: culturalProbeImg,
+   {
+    title: "Cniotal",
+    description:
+      "An interactive sculpture merging traditional Irish craft with physical computing: Handknitted cubes that respond to touch with calm, meaningful visual feedback.",
+    image: cniotalImg,
     button: "View Project",
   },
 ];
