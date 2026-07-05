@@ -5,12 +5,27 @@
   box-sizing: border-box;
 }
 
+/* Prevent horizontal scroll site-wide. `clip` (unlike `hidden`) does not
+   create a scroll container, so the sticky navbar keeps working. */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 body {
   font-family: 'Gotham A', 'Gotham B', sans-serif;
-  background-color: #F2F4F3; 
-  color: #263037; 
+  background-color: #F2F4F3;
+  color: #263037;
   line-height: 1.6;
   font-size: 18px;
+  overflow-wrap: break-word;
+}
+
+/* Media never forces the page wider than the viewport. */
+img,
+video {
+  max-width: 100%;
 }
 
 .app-container {

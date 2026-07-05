@@ -39,9 +39,8 @@
 /* EDUCATION */
 
 .education {
-  background-color: #7ba6c8; 
-  padding: 1rem 2rem;
-  font-size: 5rem ;
+  background-color: #7ba6c8;
+  padding: 2rem;
   color: #f5f5f5;
 }
 
@@ -62,8 +61,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 80%; 
-  margin-left: 7rem;
+  max-width: 100%;
+  margin: 0 3rem;
   position: relative;
   padding-top: 50px; 
   padding-left: 20px; 
@@ -196,4 +195,75 @@
 .contact-cta h3 {
   font-weight: 700;
   letter-spacing: 1px;
+  font-size: clamp(1.1rem, 5vw, 2rem);
+  overflow-wrap: anywhere;
+}
+
+/* ---- Tablet / phone ---- */
+@media (max-width: 768px) {
+  /* Hero: stack image under text, drop the big left margins */
+  .about-hero {
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+  .hero-text {
+    flex: 1 1 100%;
+  }
+  .hero-text h1 {
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    margin-left: 0;
+  }
+  .hero-text p {
+    max-width: 100%;
+    margin-left: 0;
+    font-size: 1.15rem;
+  }
+  .hero-image {
+    flex: 1 1 100%;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  /* Education timeline: horizontal → vertical stack */
+  .education h2 {
+    margin-left: 0;
+  }
+  .timeline-horizontal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem 0 0;
+  }
+  .timeline-horizontal::before {
+    display: none; /* hide the horizontal connecting line */
+  }
+  .timeline-item-horizontal {
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .timeline-item-horizontal::before {
+    top: 0.5rem;
+    left: 0; /* dot sits at the start of each stacked item */
+  }
+
+  /* Design philosophy: side-by-side → stacked */
+  .design-philosophy {
+    flex-direction: column;
+    margin: 2rem 1.5rem;
+    padding: 3rem 0;
+    gap: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  /* Design process: keep image + text stacking cleanly */
+  .process-step,
+  .process-step.reverse {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .process-step img {
+    max-width: 100%;
+  }
 }
