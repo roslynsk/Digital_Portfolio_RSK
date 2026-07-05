@@ -80,3 +80,13 @@
   transform: translateY(-50%);
   pointer-events: none;
 }
+
+/* Decorative circle overlaps the form on narrow screens — hide it there. */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    padding: 3rem 1.5rem;
+  }
+  .circle-bottom-right {
+    display: none;
+  }
+}
