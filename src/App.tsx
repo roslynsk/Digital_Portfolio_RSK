@@ -6,12 +6,11 @@ import Footer from "./Components/Footer";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Gallery from "./pages/Gallery";
-import PhotoDetail from "./pages/PhotoDetail";
+import SentioApp from "./pages/SentioApp";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import VideoDetail from "./pages/VideoDetail";
+
 import ProjectDetail from "./pages/ProjectDetail";
-import BlogDetail from "./pages/BlogDetail";
 
 function App() {
   return (
@@ -24,12 +23,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/gallery/:id" element={<PhotoDetail />} />
+            <Route path="/portfolio/sentio-app" element={<SentioApp />} />
             <Route path="/about" element={<About />} />
-            <Route path="/videos/:id" element={<VideoDetail />} />
+            
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio/:id" element={<ProjectDetail />} />
-            <Route path="/blog/:id" element={<BlogDetail />} />
           </Routes>
         </main>
 

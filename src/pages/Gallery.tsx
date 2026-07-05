@@ -1,120 +1,117 @@
-// Gallery.tsx
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import "./Gallery.css";
 
 import filler1img from "../assets/aesthetic.jpg";
 import filler2img from "../assets/dog.jpeg";
-import filler3img from "../assets/probw.jpg";
-import overflowThumb from "../assets/drawing3.png";
 
-const photographyProjects = [
-  { id: 1, title: "Ethereal Essence", description: "Aesthetic", image: filler1img },
-  { id: 2, title: "A Puppy's Palate", description: "Passion", image: filler2img },
-  { id: 3, title: "Professional", description: "Portrait", image: filler3img },
-];
+import sentioVideo from "../assets/sentio_prototype.mp4";
 
 export const videoProjects = [
   {
     id: 1,
+    title: "Sentio",
+    videoUrl: sentioVideo,
+  },
+];
+
+type PhotoItem = { type: "photo"; id: string; title: string; image: string };
+type VideoItem = { type: "video"; id: string; title: string; thumbnail: string; youtube: string };
+type GalleryItem = PhotoItem | VideoItem;
+
+
+const photos: PhotoItem[] = [
+  { type: "photo", id: "p1", title: "Ethereal Essence", image: filler1img },
+  { type: "photo", id: "p2", title: "A Puppy's Palate", image: filler2img },
+];
+
+const videos: VideoItem[] = [
+  {
+    type: "video",
+    id: "v1",
     title: "Headphones Ad",
-    description: "Assignment 4",
-    youtube: "https://www.youtube.com/embed/fn9DfOfEUCQ?si=Xc7zpEQ96GqIn2uh",
     thumbnail: "https://img.youtube.com/vi/fn9DfOfEUCQ/hqdefault.jpg",
-  },
-  
-];
-
-export const blogProjects = [
-  {
-    id: 1,
-    title: "Overflow, an Interactive Art Installation",
-    description: "Assignment 2",
-    image: overflowThumb,
-    link: "/blog/1",
-  },
-  {
-    id: 2,
-    title: "Reflection Vlog",
-    description: "Assignment 3",
-    image: "https://img.youtube.com/vi/P0S7NJK_D3E/hqdefault.jpg",
-    link: "https://youtu.be/P0S7NJK_D3E",
-  },
-  {
-    id: 3,
-    title: "Algorithmic Music Performance",
-    description: "Assignment 1",
-    image: "https://img.youtube.com/vi/UWllJ8RGFVk/hqdefault.jpg",
-    link: "https://youtu.be/UWllJ8RGFVk",
+    youtube: "https://www.youtube.com/embed/fn9DfOfEUCQ",
   },
 ];
-
 
 const Gallery: React.FC = () => {
+  const [selected, setSelected] = useState<GalleryItem | null>(null);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const renderCard = (item: GalleryItem) => (
+    <figure key={item.id} className="gallery-item">
+      <button
+        className="gallery-card"
+        onClick={() => setSelected(item)}
+        aria-label={`Open ${item.title}`}
+      >
+        <img
+          src={item.type === "photo" ? item.image : item.thumbnail}
+          alt={item.title}
+          className="gallery-image"
+          loading="lazy"
+        />
+        {item.type === "video" && <span className="play-icon" aria-hidden="true">▶</span>}
+      </button>
+      <figcaption className="gallery-caption">{item.title}</figcaption>
+    </figure>
+  );
+
   return (
     <div className="gallery">
+      <header className="gallery-header">
+        <h1>GALLERY</h1>
+      </header>
+
       <section className="gallery-section">
         <h2>PHOTOGRAPHY</h2>
-        <div className="gallery-grid">
-          {photographyProjects.map((item) => (
-            <Link to={`/gallery/${item.id}`} key={item.id} className="gallery-card-link">
-              <div className="gallery-card">
-                <img src={item.image} alt={item.title} className="gallery-image" />
-                <div className="gallery-overlay">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <div className="gallery-grid">{photos.map(renderCard)}</div>
       </section>
 
       <section className="gallery-section">
         <h2>VIDEO PRODUCTION</h2>
-        <div className="gallery-grid">
-          {videoProjects.map((item) => (
-            <Link to={`/videos/${item.id}`} key={item.id} className="gallery-card-link">
-              <div className="gallery-card">
-                <img src={item.thumbnail} alt={item.title} className="gallery-image" />
-                <div className="gallery-overlay">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <div className="gallery-grid">{videos.map(renderCard)}</div>
       </section>
 
-      <section className="gallery-section">
-  <h2>INTERACTIVE MEDIA</h2>
-  <div className="gallery-grid">
-    {blogProjects.map((item) => (
-      item.link.startsWith("http") ? (
-        <a href={item.link} target="_blank" rel="noopener noreferrer" key={item.id} className="gallery-card-link">
-          <div className="gallery-card">
-            <img src={item.image} alt={item.title} className="gallery-image" />
-            <div className="gallery-overlay">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
+      {selected && (
+        <div
+          className="lightbox"
+          onClick={() => setSelected(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={selected.title}
+        >
+          <button
+            className="lightbox-close"
+            onClick={() => setSelected(null)}
+            aria-label="Close"
+          >
+            ×
+          </button>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            {selected.type === "photo" ? (
+              <img src={selected.image} alt={selected.title} />
+            ) : (
+              <div className="lightbox-video">
+                <iframe
+                  src={`${selected.youtube}?autoplay=1`}
+                  title={selected.title}
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            )}
+            <p className="lightbox-caption">{selected.title}</p>
           </div>
-        </a>
-      ) : (
-        <Link to={item.link} key={item.id} className="gallery-card-link">
-          <div className="gallery-card">
-            <img src={item.image} alt={item.title} className="gallery-image" />
-            <div className="gallery-overlay">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          </div>
-        </Link>
-      )
-    ))}
-  </div>
-</section>
+        </div>
+      )}
     </div>
   );
 };

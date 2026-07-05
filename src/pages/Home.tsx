@@ -19,21 +19,21 @@ const featuredProjects = [
     description: "Detecting organ rejection in transplant patients",
     image: sentioimg,
     button: "See Project",
-    id: 1,
+    route: "/portfolio/sentio-app", // ✅ NEW ROUTE
   },
   {
     title: "HaptiX",
     description: "Haptic feedback suite collab with Logitech",
     image: haptiximg,
     button: "See Project",
-    id: 3,
+    route: "/portfolio/3",
   },
   {
     title: "Airbuds",
     description: "Redesigned case for ease of use when travelling",
     image: airbudimg,
     button: "See Project",
-    id: 2,
+    route: "/portfolio/2",
   },
 ];
 
@@ -56,7 +56,11 @@ const Home: React.FC = () => {
             A product / UX Designer who strives to create intuitive, elegant
             designs that solve real problems.
           </p>
-          <button className="portfolio-btn" onClick={() => navigate("/portfolio")}>
+
+          <button
+            className="portfolio-btn"
+            onClick={() => navigate("/portfolio")}
+          >
             Portfolio
           </button>
         </div>
@@ -71,10 +75,16 @@ const Home: React.FC = () => {
             <div key={index} className="project-card">
               <div className="project-image-container">
                 <img src={project.image} alt={project.title} />
-                <div className="overlay" onClick={() => navigate(`/portfolio/${project.id}`)}>
+
+                {/* ✅ UPDATED NAVIGATION */}
+                <div
+                  className="overlay"
+                  onClick={() => navigate(project.route)}
+                >
                   <span>{project.button}</span>
                 </div>
               </div>
+
               <h3>{project.title}</h3>
               <p>{project.description}</p>
             </div>

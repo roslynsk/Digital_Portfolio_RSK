@@ -13,6 +13,28 @@
   margin-bottom: 3rem;
 }
 
+/* Section wrappers */
+.portfolio-section {
+  margin-bottom: 4rem;
+}
+
+.portfolio-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.portfolio-section-heading {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+  color: #263037;
+  margin: 0 auto 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(38, 48, 55, 0.2);
+  width: 85%;
+  max-width: 85%;
+  text-align: left;
+}
+
 /* Grid Layout */
 .portfolio-grid {
   display: grid;
@@ -120,5 +142,9 @@
 
   .portfolio-overlay p {
     font-size: 0.9rem;
+  }
+
+  .portfolio-section-heading {
+    font-size: 1.1rem;
   }
 }

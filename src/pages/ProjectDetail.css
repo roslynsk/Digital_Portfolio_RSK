@@ -126,3 +126,11 @@
     max-width: 100%;
   }
 }
+.rotate-image {
+  transform: rotate(270deg);
+  transform-origin: center;
+  max-height: 80vh;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
