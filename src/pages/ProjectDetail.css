@@ -8,7 +8,7 @@
   text-decoration: none;
   font-size: 0.9rem;
   opacity: 0.7;
-  color: whitesmoke;
+  color: #263037;
   display: inline-block;
   margin-bottom: 2rem;
 }
@@ -63,14 +63,14 @@
 
 .project-detail-text h1 {
   font-size: 2.2rem;
-  color: whitesmoke;
+  color: #263037;
   margin-bottom: 0.25rem;
 }
 
 .project-detail-text h2 {
   font-size: 1.2rem;
   font-weight: normal;
-  color: whitesmoke;
+  color: #263037;
   margin-bottom: 1.5rem;
   opacity: 0.7;
 }
@@ -78,7 +78,7 @@
 .project-intro {
   font-size: 1rem;
   line-height: 1.7;
-  color: whitesmoke;
+  color: #263037;
   margin-bottom: 2rem;
   border-left: 3px solid #7ba6c8;
   padding-left: 1rem;
@@ -93,19 +93,19 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: whitesmoke;
+  color: #263037;
   margin-bottom: 0.5rem;
 }
 
 .project-section p {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: whitesmoke;
+  color: #263037;
 }
 
 .project-codesigners {
   font-size: 0.9rem;
-  color: white;
+  color: #263037;
   opacity: 0.7;
   margin-bottom: 1.5rem;
   font-style: italic;

@@ -14,6 +14,13 @@
   font-weight: bold;
   font-size: 2rem;
   color: #7ba6c8;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.75;
 }
 
 .nav-links {

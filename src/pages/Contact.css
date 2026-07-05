@@ -49,6 +49,29 @@
   font-size: 1rem;
 }
 
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Submission status messages */
+.form-status {
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+.form-status.success {
+  color: #256029;
+  background: #e6f4ea;
+}
+
+.form-status.error {
+  color: #8a1c1c;
+  background: #fdecea;
+}
+
 /* Spinning circle at the right side of the page */
 .circle-bottom-right {
   position: absolute;

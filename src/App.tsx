@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
 
 // Pages
 import Home from "./pages/Home";
@@ -15,6 +16,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 function App() {
   return (
     <Router basename={import.meta.env.BASE_URL}>
+      <ScrollToTop />
       <div className="app">
         <Navbar />
 
