@@ -7,6 +7,7 @@ import project2Img from "../assets/airbuds.png";
 import project3Img from "../assets/Haptix.png";
 import cniotalImg from "../assets/Cniotail.jpg";
 import PentaglowImg from "../assets/PentaGlow.jpeg";
+import uniMarketImg from "../assets/Hackathon_1.jpg";
 
 type Project = {
   id: number;
@@ -62,6 +63,15 @@ const uxUiProjects: Project[] = [
     image: project1Img,
     button: "View Project",
     path: "/portfolio/sentio-app",
+  },
+  {
+    id: 6,
+    title: "UniMarket",
+    description:
+      "A trusted, UL-exclusive marketplace designed to help students and staff buy, sell, and exchange second-hand items safely.",
+    image: uniMarketImg,
+    button: "View Project",
+    path: "/portfolio/unimarket-app",
   },
 ];
 

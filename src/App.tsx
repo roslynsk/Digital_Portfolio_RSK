@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Gallery from "./pages/Gallery";
 import SentioApp from "./pages/SentioApp";
+import UniMarket from "./pages/UniMarket";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/portfolio/sentio-app" element={<SentioApp />} />
+            <Route path="/portfolio/unimarket-app" element={<UniMarket />} />
             <Route path="/about" element={<About />} />
             
             <Route path="/contact" element={<Contact />} />

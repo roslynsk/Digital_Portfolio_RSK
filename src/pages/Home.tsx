@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 import sentioimg from "../assets/sentio.png";
 import haptiximg from "../assets/Haptix.png";
-import airbudimg from "../assets/airbuds.png";
+import unimarketimg from "../assets/Hackathon_1.jpg";
+import pentaglowimg from "../assets/PentaGlow.jpeg";
 import backgroundimg from "../assets/Coverdrawing.png";
 import affinityimg from "../assets/affinity.png";
 import solidworksimg from "../assets/solidworks.png";
@@ -29,11 +30,18 @@ const featuredProjects = [
     route: "/portfolio/3",
   },
   {
-    title: "Airbuds",
-    description: "Redesigned case for ease of use when travelling",
-    image: airbudimg,
+    title: "UniMarket",
+    description: "UL-exclusive marketplace to safely buy and sell second-hand",
+    image: unimarketimg,
     button: "See Project",
-    route: "/portfolio/2",
+    route: "/portfolio/unimarket-app",
+  },
+  {
+    title: "Penta Glow",
+    description: "Laser-cut lamp exploring digital fabrication",
+    image: pentaglowimg,
+    button: "See Project",
+    route: "/portfolio/5",
   },
 ];
 
