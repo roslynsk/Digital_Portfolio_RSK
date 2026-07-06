@@ -16,7 +16,7 @@ const About: React.FC = () => {
         <div className="hero-text">
           <h1>From products to experiences <br></br> — I make design more human.</h1>
           <p>
-            Hi! I’m Roslyn, an Irish designer, focused on creating 
+            Hi! I’m Roslyn Shaw-Kelly, an Irish designer, focused on creating 
             solutions that feel seamless and meaningful. I have a BSc in Product Design and am currently sudying a MSc in Interaction and Experience Design.
           </p>
         </div>
