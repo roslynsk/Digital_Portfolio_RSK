@@ -11,6 +11,7 @@ import SentioApp from "./pages/SentioApp";
 import UniMarket from "./pages/UniMarket";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Arise from "./pages/Arise";
 
 import ProjectDetail from "./pages/ProjectDetail";
 
@@ -29,7 +30,7 @@ function App() {
             <Route path="/portfolio/sentio-app" element={<SentioApp />} />
             <Route path="/portfolio/unimarket-app" element={<UniMarket />} />
             <Route path="/about" element={<About />} />
-            
+            <Route path="/portfolio/arise" element={<Arise />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio/:id" element={<ProjectDetail />} />
           </Routes>

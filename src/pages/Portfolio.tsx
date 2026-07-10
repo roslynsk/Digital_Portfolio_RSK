@@ -8,6 +8,7 @@ import project3Img from "../assets/Haptix.png";
 import cniotalImg from "../assets/Cniotail.jpg";
 import PentaglowImg from "../assets/PentaGlow.jpeg";
 import uniMarketImg from "../assets/Hackathon_1.jpg";
+import ariseImg from "../assets/ARISE_POSTER.png";
 
 type Project = {
   id: number;
@@ -17,6 +18,18 @@ type Project = {
   button: string;
   path?: string;
 };
+
+const currentProjects: Project[] = [
+  {
+    id: 7,
+    title: "ARISE",
+    description:
+      "An inclusive outdoor recreation space co-designed with the University of Limerick and Limerick City & County Council to promote accessibility, wellbeing, and community connection.",
+    image: ariseImg,
+    button: "View Project",
+    path: "/portfolio/arise",
+  },
+];
 
 const productDesignProjects: Project[] = [
   {
@@ -76,6 +89,8 @@ const uxUiProjects: Project[] = [
 ];
 
 
+
+
 const Portfolio: React.FC = () => {
   const navigate = useNavigate();
 
@@ -104,6 +119,14 @@ const Portfolio: React.FC = () => {
       <h1 className="portfolio-title">PORTFOLIO</h1>
 
       <section className="portfolio-section">
+        <h2 className="portfolio-section-heading">CURRENT PROJECTS</h2>
+
+        <div className="portfolio-grid">
+          {currentProjects.map(renderCard)}
+        </div>
+      </section>
+
+      <section className="portfolio-section">
         <h2 className="portfolio-section-heading">PRODUCT DESIGN</h2>
         <div className="portfolio-grid">
           {productDesignProjects.map(renderCard)}
@@ -116,6 +139,8 @@ const Portfolio: React.FC = () => {
           {uxUiProjects.map(renderCard)}
         </div>
       </section>
+
+      
     </div>
   );
 };
